@@ -9,6 +9,10 @@ const http_1 = __importDefault(require("http"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(express_1.default.static("public"));
+app.get("*.js", (req, res, next) => {
+    res.set("Content-Type", "application/javascript");
+    next();
+});
 const server = http_1.default.createServer(app);
 server.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

@@ -7,6 +7,11 @@ const port = 3000;
 
 app.use(express.static("public"));
 
+app.get("*.js", (req, res, next) => {
+  res.set("Content-Type", "application/javascript");
+  next();
+});
+
 const server = http.createServer(app);
 server.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
