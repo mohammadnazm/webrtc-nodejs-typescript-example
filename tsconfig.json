@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "outDir": "./dist",
+    "target": "es6",
+    "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "public/client.js"]
+  "include": [
+    "src/**/*.ts",
+    "public/**/*.ts" // Make sure to include .ts files in public if any
+  ]
 }
